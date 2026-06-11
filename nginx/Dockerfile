@@ -1,4 +1,5 @@
-FROM ubuntu:latest
-LABEL authors="KW34"
+FROM nginx:latest
 
-ENTRYPOINT ["top", "-b"]
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
