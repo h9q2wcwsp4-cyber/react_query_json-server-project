@@ -6,19 +6,6 @@ pipeline {
     stages {
 
 
-        stage('Git Clone') {
-
-            steps {
-
-                git branch: 'main',
-                    url: 'https://github.com/사용자명/저장소명.git'
-
-            }
-
-        }
-
-
-
         stage('Docker Compose Build') {
 
             steps {
@@ -73,7 +60,6 @@ pipeline {
 
     post {
 
-
         success {
 
             echo '배포 성공'
@@ -87,8 +73,6 @@ pipeline {
 
         }
 
-
     }
-
 
 }
