@@ -21,6 +21,7 @@ services:
 
 
 
+
   json-server:
 
 
@@ -35,11 +36,8 @@ services:
       - "3001:3001"
 
 
-    volumes:
-      - ./frontend/server/db.json:/app/db.json
-
-
     restart: always
+
 
 
 
