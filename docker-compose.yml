@@ -1,6 +1,5 @@
-version: "3.8"
-
 services:
+
 
   frontend:
 
@@ -9,20 +8,25 @@ services:
 
     container_name: react-app
 
-    depends_on:
-      - json-server
 
     ports:
       - "3000:3000"
 
-    restart: unless-stopped
+
+    depends_on:
+      - json-server
+
+
+    restart: always
 
 
 
   json-server:
 
+
     build:
       context: ./frontend/server
+
 
     container_name: json-server
 
@@ -35,11 +39,13 @@ services:
       - ./frontend/server/db.json:/app/db.json
 
 
-    restart: unless-stopped
+    restart: always
+
 
 
 
   nginx:
+
 
     build:
       context: ./nginx
@@ -48,18 +54,12 @@ services:
     container_name: nginx
 
 
-    depends_on:
-      - frontend
-
-
     ports:
       - "80:80"
 
 
-    restart: unless-stopped
+    depends_on:
+      - frontend
 
 
-
-volumes:
-
-  jenkins_home:
+    restart: always

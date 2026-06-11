@@ -11,15 +11,12 @@ pipeline {
             steps {
 
                 sh '''
-
                 docker compose build
-
                 '''
 
             }
 
         }
-
 
 
         stage('Deploy') {
@@ -27,11 +24,8 @@ pipeline {
             steps {
 
                 sh '''
-
                 docker compose down
-
                 docker compose up -d
-
                 '''
 
             }
@@ -39,15 +33,12 @@ pipeline {
         }
 
 
-
         stage('Check Container') {
 
             steps {
 
                 sh '''
-
                 docker ps
-
                 '''
 
             }
@@ -61,16 +52,12 @@ pipeline {
     post {
 
         success {
-
             echo '배포 성공'
-
         }
 
 
         failure {
-
             echo '배포 실패'
-
         }
 
     }
