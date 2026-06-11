@@ -1,5 +1,5 @@
 import axios from "axios"
 
-export  const rootApi = axios.creat({
-    baseURI: "/api"
+export const rootApi = axios.create({
+    baseURL: "/api"
 })
