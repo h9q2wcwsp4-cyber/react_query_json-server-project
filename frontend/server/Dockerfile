@@ -6,8 +6,8 @@ COPY package.json ./
 
 RUN npm install
 
-COPY . .
+COPY db.json ./
 
-EXPOSE 3000
+EXPOSE 3001
 
-CMD ["npm","run","dev","--","--host","0.0.0.0"]
+CMD ["npm","start"]
